@@ -36,3 +36,8 @@ const myfun = function(){
 //all non primitive data type is typeof object
 //function has typeof function but it is object function
 console.log(typeof myfun)
+
+//+++++++++++++++++++++++++++++++++++++
+//memory 
+//stack(primitive) creates a copy - change in copy 
+//heap(non primitive) gets reference - change in orginal value 
