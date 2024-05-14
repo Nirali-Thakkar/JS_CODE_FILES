@@ -31,3 +31,29 @@ console.log(Object.entries(obj3))
 
 //to check prpperty or key
 console.log(obj1.hasOwnProperty("1"))
+
+// destrucre
+const course = {
+    cname : "JS",
+    price : 999,
+    teacher : "Nirali"
+} 
+
+//to access - to destrcutre 
+const {cname} = course
+console.log(cname)
+const {cname : name} = course 
+
+//json object 
+{
+    "name" : "nirali",
+    "age" : 18,
+    "cousre" : "js"
+} 
+//has no name 
+//key and value both in string 
+
+//api 
+//int api you can data in object or array
+//use json formter to understan the data in different form 
+// for data randomuserme website 
