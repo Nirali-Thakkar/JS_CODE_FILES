@@ -56,3 +56,10 @@ function returnarray(getarray){
     return getarray[1]
 }
 console.log(returnarray(arr)) //will return second value 
+
+
+//arrow function
+const sum = (a,b) => {
+    return (a+b);
+  }
+  console.log(sum(2,3))
