@@ -20,9 +20,10 @@
         <!-- DOM is documnet object model 
         that is object model ,structure  -->
         <ul>
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
+            <li class = "item">one</li>
+            <li class = "item">two</li>
+            <li class = "item">three</li>
+            <li class = "item">four</li>
 
         </ul>
     </div>
@@ -102,3 +103,14 @@ it has access to for each but cannot have map
 templist.forEach(function (l){
     l.style.backgroundColor = "green"
 }) -->
+
+<!-- 
+getElementsByClassName give HTMLCollection
+it does not have for each  you need to convert it to array  -->
+
+<!-- const names = document.getElementsByClassName("item")
+undefined
+Array.from(names) -->
+myarr.forEach( function(l){
+    l.style.backgroundColor = "red"
+})
