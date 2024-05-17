@@ -13,10 +13,18 @@
 </head>
 <body class="bg-black">
     <div>
-        <h1 id="title" class="heading">  DOM learning </h1>
+        <h1 id="title" class="heading">  DOM learning  <span style="display: none;">text text </span></h1>
+        <h1> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, similique.</h1>
+        <h3>Lorem, ipsum dolor.</h3>
         <p> welcome to java script DOM learning ...... </p>
         <!-- DOM is documnet object model 
         that is object model ,structure  -->
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+
+        </ul>
     </div>
 </body>
 </html>
@@ -31,9 +39,66 @@ document.getElementById("title").className
 ƒ getAttribute() { [native code] }
 document.getElementById("title").getAttribute("class")
 'heading' -->
-document.getElementById("title").setAttribute("class","test")
-undefined
+<!-- document.getElementById("title").setAttribute("class","test")
+undefined -->
 
-const title = document.getElementById("title")
+<!-- const title = document.getElementById("title")
 title
 const title = document.getElementById("title")
+title.style.backgroundColor = "green"
+title.style.padding="40px"
+title 
+<h1 id="title" class="test" style="background-color: green; padding: 40px;">  DOM learning </h1>
+title.textContent
+DOM learning
+title.innerText
+DOM learning
+title.innerHTML
+DOM learning -->
+
+<!-- differnce between innerText ,innerHTML , and textContent --> 
+
+<!-- innerText show only visible text not all inside span text 
+textContent show all the text inside span 
+innerHTML show same as line written in code  -->
+
+<!-- title.innerText
+'DOM learning'
+title.textContent
+'  DOM learning  text text  -->
+<!-- title.innerHTML
+'  DOM learning  <span style="display: none;">text text </span>' -->
+<!-- 
+document.getElementsByClassName("heading")
+
+HTMLCollection [h1#title.heading, title: h1#title.heading] -->
+
+<!-- query selector gives only first one 
+you can write querys elector for id class input[type=password ] -->
+
+
+<!-- query selector on ul -->
+<!-- const ul1 = document.querySelector("ul")
+undefined
+const li1 = ul1.querySelector("li")
+undefined
+li1.style.backgroundColor = "red"
+'red'
+li1.style.paddi
+undefined
+li1.style.padding = "10px"
+'10p -->
+
+
+<!-- querySelectorAll -->
+<!-- select all element and store in nodelist can acces by name[0] .. -->
+<!-- const templist = document.querySelectorAll('li') -->
+<!-- templist 
+NodeList(3) [li, li, li] -->
+
+<!-- templist[0].style.backgroundColor ="green" -->
+<!-- 
+it has access to for each but cannot have map 
+templist.forEach(function (l){
+    l.style.backgroundColor = "green"
+}) -->
