@@ -53,3 +53,15 @@ form.addEventListener('submit', function (e) {
   }
 });
 ```
+
+```javascript
+const clock = document.getElementById('clock');
+//can aslo use queryselector both give same result
+//const clock = document.querySelector('#clock')
+
+setInterval(function () {
+  const date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000); //run after every 1 second
+
+```
