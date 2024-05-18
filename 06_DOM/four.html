@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM edit remove </title>
+</head>
+<body style="background-color: darkgray; color: black;">
+    <ul class= "language">
+        <li> javasript </li>
+        <li>java</li>
+        <li>react</li>
+        <li>node</li>
+    </ul>
+</body>
+<script>
+    function addlaguage(addlan){
+       const li =  document.createElement('li')
+       li.innerHTML = `${addlan}`
+       document.querySelector('.language').appendChild(li)
+    }
+    addlaguage('php')
+    addlaguage('c++')
+
+    //this is not optimise meytho  because it will trvaserse whole tree
+
+    //optimize it -bcz it does not need to travse tree we have use appendchil for text 
+    //use appendchil instead of innerhtml
+    function addoptilanguage(addlang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(addlang))
+        document.querySelector('.language').appendChild(li)
+    }
+    addoptilanguage('c')
+
+    //edit value 
+    const chnage = document.querySelector('li:nth-child(2)')
+    //chnage.innerHTML = "csharp" not optimise
+    const newli =document.createElement('li')
+    //newli.appendChild(document.createTextNode("csharp"))
+    newli.textContent = "mojo"
+    chnage.replaceWith(newli)
+    
+
+    //edit 
+    const chnage2 = document.querySelector('li:nth-child(1)')
+    chnage2.outerHTML = '<li> type </li>'
+
+    //remove 
+    const last = document.querySelector('li:last-child')
+    last.remove()
+
+
+
+
+
+
+</script>
+</html>
