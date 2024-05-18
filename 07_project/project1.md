@@ -35,6 +35,8 @@ buttons.forEach(function (button) {
 
 
 ```
+
+#project 2
 ```javascript
 const form = document.querySelector('form'); 
 form.addEventListener('submit', function (e) {
@@ -53,6 +55,7 @@ form.addEventListener('submit', function (e) {
   }
 });
 ```
+#project 3
 
 ```javascript
 const clock = document.getElementById('clock');
