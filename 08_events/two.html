@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ASYNC </title>
+</head>
+<body>
+    <h1> hello js </h1>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+    //run only one time after 2 second
+    const name = function(){
+        console.log("nirali");
+    }
+    setTimeout(name,2000) //refrence 
+
+    const change = function(){
+        document.querySelector('h1').innerHTML = "hello nirali"
+    }
+    const chnageme = setTimeout(change,2000)
+    //to clear timeout 
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(chnageme)
+    })
+   
+    //will continusly after every 2 second interval
+
+</script>
+</html>
