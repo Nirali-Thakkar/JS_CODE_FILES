@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ASYNC </title>
+</head>
+<body>
+
+    <h1> hello js with Nirali  </h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+
+//set interval will continusly after every 2 second interval
+// setInterval(saydate,1000,"hiiii...")
+const saydate = function(str){
+        console.log(str  + Date.now())
+}
+const tostart = function(){
+    int = setInterval(saydate,1000,"hii...")
+}
+const tostop = function(){
+    clearInterval(int)
+}
+
+document.getElementById('start').addEventListener('click',tostart)
+document.getElementById('stop').addEventListener('click',tostop)
+
+
+</script>
+</html>
