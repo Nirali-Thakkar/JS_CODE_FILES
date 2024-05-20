@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 500px;
+            height: 600px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+      .button {
+        background-color: #141414;
+        color: #fff;
+        width: 250px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 30px;
+        border-style: none;
+        margin-top: 30px;
+        margin-left: 50px; 
+    }
+    </style>
+</head>
+<body>
+    <!-- JSON is used to convert a string to an object and can be used for extracting
+     followers and creating a card with photo and follower accounts.  on ckicking on button -->
+    <form><input type="submit" class="button"></form>
+    <div class="card">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <h2></h2> 
+    </div>
+</body>
+<script>
+    const requesturl = "https://api.github.com/users/hiteshchoudhary" 
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',requesturl)
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState ==4){
+            const data =  JSON.parse(this.responseText); 
+            document.querySelector('.button').addEventListener('click',function(){
+                document.querySelector('.card img').setAttribute("src",`${data.avatar_url}`)
+                document.querySelector("h2").innerHTML = `${data.followers}`
+            })
+            // img = `${data.avatar_url}`
+            // text =`${data.followers}`
+        }
+    }
+    // document.querySelector('.button').addEventListener('click',function(){
+    //     document.querySelector('.card').setAttribute("src",img)
+    //     document.querySelector("h2").innerHTML = text
+
+    // })
+    xhr.send()
+</script>
+</html>
