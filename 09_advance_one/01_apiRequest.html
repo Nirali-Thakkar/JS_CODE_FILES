@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    API - talking launaguge between two systems 
+    to get random api website - randomuser.me
+    to read or format api website - json formater 
+
+    5 state of data request  in xml <br>
+    0 to 4<br>
+
+    0	UNSENT	Client has been created. open() not called yet.<br>
+    1	OPENED	open() has been called.<br>
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.<br>
+    3	LOADING	Downloading; responseText holds partial data.<br>
+    4	DONE	The operation is complete.<br>
+</body>
+<script>
+    const requesturl = "https://api.github.com/users/hiteshchoudhary" 
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET',requesturl) //has two parameters 1 method and 2 string 
+    console.log(xhr.readyState) // will print 1
+    //to continusly track state 
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState) //will print from 2
+        if(xhr.readyState ==4){
+           // console.log(this.responseText) //this will give all data of url in string
+           //data always comes in string fromat 
+           //you need to convert to object with help of json 
+           const data =  JSON.parse(this.responseText); 
+           console.log(data)
+           console.log(data.followers)
+        }
+    }
+    //to call open 
+    xhr.send()
+
+
+    //v8 engine 
+    //github/v8/v8 - how console wokrs 
+    // v8/scr/d8 has code for console
+</script>
+</html>
