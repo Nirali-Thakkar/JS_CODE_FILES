@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: darkgray; color: antiquewhite;">
+    <button id="orange" style="padding: 25px;"> orange </button>
+    <button id="green" style="padding: 25px;"> green </button>
+    
+</body>
+<script>
+    //lexical scoping - inner function get acces of outer function 
+
+     function init() {
+        let name = "Mozilla"; 
+        function displayName() {
+            console.log(name); 
+        }
+        displayName();
+    }
+    init();
+    function outer(){
+        let username = "nirali"
+        function inner(){
+            console.log("inner",username)
+        }
+        inner()
+        function innerTwo(){
+            console.log("innerTwo",username)
+        }
+        innerTwo()
+    }
+    outer()
+
+    //cosure - when you retuen a funcution not olny function but whole lexical scope is returned 
+     function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+   
+</script>
+<script>
+    // document.getElementById('orange').addEventListener('click',function(){
+    //     document.body.style.backgroundColor = "orange"
+    // })
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = "green"
+    // }
+    function clickHanler(color){
+      //  document.body.style.backgroundColor = `${color}` // this will work directly not on click
+      //to wrk on click can use closure 
+      return function(){
+        document.body.style.backgroundColor = `${color}`//color can use by inside fuction 
+      }
+      
+    }
+    document.getElementById("orange").onclick = clickHanler("orange")
+    document.getElementById("green").onclick = clickHanler("green")
+
+</script>
+</html>
